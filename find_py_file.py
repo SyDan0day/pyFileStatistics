@@ -1,12 +1,16 @@
 """
-**********************************************
-** 出指定路径下py文件的函数、类、空白行、代码行数量 **
-**********************************************
+****************************************************
+** 出指定路径下py文件的函数、类、空白行、代码行数量 V1.0 **
+****************************************************
 """
 import os
 
+"""
+获取python文件的路径。
+参数:目标目录的路径str
+返回:目标目录下所有的python文件绝对路径str
+"""
 def get_py_path(dir_path) -> list:
-# 获取python文件的路径。
     file_path = []
     for root, dirs, files in os.walk(dir_path):
         for file in files:
@@ -41,7 +45,6 @@ def file_count(file_path) -> list:
         'blank_lines' : blank_cnt,
         'code_lines'  : code_cnt,
     }
-
 
 if __name__ == '__main__':
     dir_path = '/Users/bellchen/AI_Test'
