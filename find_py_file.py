@@ -15,12 +15,12 @@ def get_py_path(dir_path) -> list:
     for root, dirs, files in os.walk(dir_path):
         for file in files:
             if file.endswith('.py'):
-                file_path.append(os.path.join(root + '/' + file))
+                file_path.append(os.path.join(root, file)) 
     return file_path
 
 def file_count(file_path) -> list:
 # 统计python文件的类、函数、空白行、代码行的数量。
-    with open(file_path, mode = 'r') as f:
+    with open(file_path, mode = 'r', encoding='UTF-8') as f:
         lines = f.readlines()
         func_cnt = 0
         class_cnt = 0
